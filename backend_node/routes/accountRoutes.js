@@ -15,7 +15,7 @@ router.post('/login', (req, res) => {
   const result = account.login(req.body.email,req.body.password);
   res.send(result);
   })
-router.post('/forgotpassword', (req, res) => {
+router.get('/forgotpassword', (req, res) => {
   const result = account.forgotPassword();
   res.send(result);
   })  

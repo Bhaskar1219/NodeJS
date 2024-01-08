@@ -20,9 +20,20 @@ async function login(email,password){
     const user = await User.findOne({email:email}).exec();
     console.log(user);
     console.log(user._id);
+    return user;
     // user login
 };
-function forgotPassword(){
+async function forgotPassword(){
+
+    const data = {
+        name: 'Los Angeles',
+        state: 'CA',
+        country: 'USA'
+      };
+      
+      // Add a new document in collection "cities" with auto generated id
+      const res = await db.collection('cities').add(data);
+      return res.id;
     // forgot password
 };
 function changePassword(){
